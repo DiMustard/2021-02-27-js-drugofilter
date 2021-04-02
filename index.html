@@ -10,16 +10,16 @@
         JS-библиотека от Material Design Lite,
         шаблонизатор Handlebars,
         VK API -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,500,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500,900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-teal.min.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-deep_purple.min.css" />
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
         integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
         crossorigin="anonymous"></script>
     <script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
     <!-- Мои стили и фавиконка -->
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
 </head>
 
@@ -27,13 +27,18 @@
 <body>
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Друзья <span id="user">Дианы Горчичной</span></span>
+            <span class="mdl-layout-title">Друзья
+                <a target="_blank" data-role="current-user">Неизвестного Пользователя</a>
+            </span>
+            <span class="material-icons material-icons-sharp exit" title="Выйти из приложения"
+                data-role="exit">logout</span>
         </div>
     </header>
 
 
+
     <div class="app">
-        <div id="friends-all" class="column">
+        <div id="friends-all">
             <div class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <span class="material-icons search">search</span>
@@ -44,119 +49,11 @@
                 </div>
             </div>
 
-            <ul class="mdl-list">
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bryan Cranston
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Aaron Paul
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bob Odenkirk
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bryan Cranston
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Aaron Paul
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bob Odenkirk
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bryan Cranston
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Aaron Paul
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bob Odenkirk
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">navigate_next</i>
-                        </button>
-                    </span>
-                </li>
-            </ul>
+            <ul class="mdl-list" data-role="friends-all"></ul>
         </div>
 
-        <div id="friends-select" class="column">
+
+        <div id="friends-select">
             <div class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <span class="material-icons search">search</span>
@@ -167,116 +64,7 @@
                 </div>
             </div>
 
-            <ul class="mdl-list">
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bryan Cranston
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Aaron Paul
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bob Odenkirk
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bryan Cranston
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Aaron Paul
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bob Odenkirk
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bryan Cranston
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Aaron Paul
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Bob Odenkirk
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <button
-                            class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </span>
-                </li>
-            </ul>
+            <ul class="mdl-list" data-role="friends-select"></ul>
         </div>
     </div>
 
@@ -284,28 +72,40 @@
 
     <script id="friends-template" type="text/x-handlebars-template">
         {{#each friends}}
-            <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    {{#if photo}}
-                        <img src="{{photo_100}}">
-                    {{else}}
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                    {{/if}}
-                    {{first_name}} {{last_name}}
-                </span>
-                <span class="mdl-list__item-secondary-action">
-                    <button
-                        class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                        {{#if add}}
-                            <i class="material-icons">navigate_next</i>
+            {{#if id}}
+                <li class="mdl-list__item" id="{{id}}">
+                    <a target="_blank" href="https://vk.com/id{{id}}" class="mdl-list__item-primary-content">
+            {{else}}
+                <li class="mdl-list__item">
+                    <a target="_blank" href="https://vk.com/id0" class="mdl-list__item-primary-content">
+            {{/if}}
+                        {{#if photo}}
+                            <img class="material-icons mdl-list__item-avatar" src="{{photo_100}}">
                         {{else}}
-                            <i class="material-icons">close</i>
+                            <i class="material-icons mdl-list__item-avatar">person</i>
                         {{/if}}
-                    </button>
-                </span>
-            </li>
+                        <span>{{first_name}} {{last_name}}</span>
+                    </a>
+                    <span class="mdl-list__item-secondary-action">
+                        {{#if add}}
+                            <button
+                                class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" data-role="add" data-id="{{id}}">
+                                    <i class="material-icons">navigate_next</i>
+                            </button>
+                        {{else}}
+                            <button
+                                class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" data-role="remove" data-id="{{id}}">
+                                    <i class="material-icons">close</i>
+                            </button>
+                        {{/if}}
+                    </span>
+                </li>
         {{/each}}
     </script>
+
+
+
+    <script src="./scripts/index.js" type="module"></script>
 </body>
 
 </html>

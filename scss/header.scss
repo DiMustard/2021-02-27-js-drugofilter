@@ -1,0 +1,28 @@
+header {
+    &.mdl-layout__header {
+        background-color: #FFA000;
+    }
+
+    .mdl-layout__header-row {
+        justify-content: space-between;
+    }
+
+    a {
+        color: #FFECB3;
+
+        &:hover {
+            color: #512DA8;
+            font-weight: 700;
+        }
+    }
+
+    .exit {
+        color: #FFECB3;
+        font-size: 32px;
+
+        &:hover {
+            cursor: progress;
+            color: #512DA8;
+        }
+    }
+}

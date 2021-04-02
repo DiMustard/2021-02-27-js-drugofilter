@@ -1,0 +1,32 @@
+.app {
+    height: calc(100% - 64px);
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 2px solid #BDBDBD;
+
+    &>* {
+        width: 100%;
+        border-right: 2px solid #BDBDBD;
+
+        &:last-child {
+            border-right: none;
+            margin-right: 0;
+        }
+    }
+
+    .mdl-layout__header {
+        padding-top: 2px;
+        background-color: #F5F5F5;
+        border-bottom: 2px solid #BDBDBD;
+
+        .search {
+            color: #757575;
+            margin-left: -8px;
+            margin-right: 24px;
+        }
+
+        .mdl-textfield {
+            width: calc(100% - 64px);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.mdl-list {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    height: calc(100% - 64px);
+
+    .mdl-list__item {
+        padding: 16px 16px 16px 24px;
+
+        .mdl-list__item-avatar,
+        .mdl-list__item-avatar.material-icons {
+            background-color: #9E9E9E;
+            width: 64px;
+            height: 64px;
+            font-size: 64px;
+        }
+
+        .mdl-list__item-primary-content {
+            margin-right: 24px;
+
+            .mdl-list__item-avatar {
+                margin-right: 24px;
+            }
+
+            &:hover .mdl-list__item-avatar {
+                box-shadow: 0 0 0 4px #512DA8;
+            }
+
+            &:hover span {
+                color: #512DA8;
+                font-weight: 700;
+            }
+        }
+    }
+}
