@@ -10,7 +10,7 @@ html {
 body {
     background-color: #EEEEEE;
     width: 750px;
-    height: calc((64px * 2) + (96px * 6));
+    height: 90vh;
     min-height: auto;
     display: flex;
     flex-flow: column nowrap;
@@ -55,4 +55,8 @@ a {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
+}
+
+.none {
+    display: none !important;
 }

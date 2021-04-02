@@ -4,7 +4,7 @@ Controller.NOfriends();
 
 
 
-Model.login(7811603, 2)
+Model.login(7811785, 2)
     .then(() => {
         return Model.getUser({
             name_case: 'gen'
@@ -44,6 +44,30 @@ Model.login(7811603, 2)
                 Controller.friendsSelect();
             }
         });
+
+        document.addEventListener("input", e => {
+            if (e.target.getAttribute("data-role") === "search-all") {
+                let input = e.target;
+                let ul = document.querySelector('[data-role="friends-all"]');
+                search(input, ul);
+
+            } else if (e.target.getAttribute("data-role") === "search-select") {
+                let input = e.target;
+                let ul = document.querySelector('[data-role="friends-select"]');
+                search(input, ul);
+            }
+        });
+
+        function search(input, ul) {
+            let list = ul.querySelectorAll(".mdl-list__item");
+            for (const friend of list) {
+                friend.classList.remove("none");
+                let name = friend.querySelector('[data-role="name"]').textContent;
+                if (!name.toLowerCase().includes(input.value.toLowerCase())) {
+                    friend.classList.add("none");
+                }
+            }
+        }
     })
     .catch(e => {
         console.error(e);

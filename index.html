@@ -43,7 +43,7 @@
                 <div class="mdl-layout__header-row">
                     <span class="material-icons search">search</span>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="all">
+                        <input class="mdl-textfield__input" type="text" id="all" data-role="search-all">
                         <label class="mdl-textfield__label" for="all">Все друзья...</label>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                 <div class="mdl-layout__header-row">
                     <span class="material-icons search">search</span>
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="select">
+                        <input class="mdl-textfield__input" type="text" id="select" data-role="search-select">
                         <label class="mdl-textfield__label" for="select">Друзья в списке...</label>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                         {{else}}
                             <i class="material-icons mdl-list__item-avatar">person</i>
                         {{/if}}
-                        <span>{{first_name}} {{last_name}}</span>
+                        <span data-role="name">{{first_name}} {{last_name}}</span>
                     </a>
                     <span class="mdl-list__item-secondary-action">
                         {{#if add}}
