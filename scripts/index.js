@@ -1,4 +1,5 @@
 import Model from './model.js';
+import View from './view.js';
 import Controller from './controller.js';
 Controller.NOfriends();
 
@@ -19,55 +20,56 @@ Model.login(7811785, 2)
         Controller.friendsAll();
         Controller.friendsSelect();
     })
+
+
+
     .then(() => {
         document.addEventListener("click", e => {
             let target;
 
-            if (e.path[0].classList.contains("material-icons")) {
-                target = e.path[1];
+            if (e.target.classList.contains("material-icons")) {
+                if (e.target.classList.contains("search")) {
+                    let attr = e.target.getAttribute("data-role");
+                    target = document.querySelector(`[data-role="search-${attr}"]`);
 
-            } else if (e.path[0].classList.contains("mdl-button")) {
-                target = e.path[0];
+                } else {
+                    target = e.target.closest(".mdl-button");
+                }
+
+            } else if (e.target.classList.contains("mdl-button")) {
+                target = e.target;
             }
 
 
             if (target && target.getAttribute("data-role") === "add") {
                 let addID = target.getAttribute("data-id");
-                let addUser = document.getElementById(`${addID}`);
-                localStorage.setItem(`drugofilter${addID}`, `https://vk.com/id${addID}`);
+                Model.addSelect(Number(addID));
                 Controller.friendsSelect();
 
             } else if (target && target.getAttribute("data-role") === "remove") {
                 let removeID = target.getAttribute("data-id");
-                let removeUser = document.getElementById(`${removeID}`);
-                localStorage.removeItem(`drugofilter${removeID}`);
+                Model.removeSelect(Number(removeID));
                 Controller.friendsSelect();
+
+            } else if (target && target.tagName === "INPUT") {
+                target.focus();
             }
         });
+
+
 
         document.addEventListener("input", e => {
             if (e.target.getAttribute("data-role") === "search-all") {
                 let input = e.target;
                 let ul = document.querySelector('[data-role="friends-all"]');
-                search(input, ul);
+                View.search(input, ul);
 
             } else if (e.target.getAttribute("data-role") === "search-select") {
                 let input = e.target;
                 let ul = document.querySelector('[data-role="friends-select"]');
-                search(input, ul);
+                View.search(input, ul);
             }
         });
-
-        function search(input, ul) {
-            let list = ul.querySelectorAll(".mdl-list__item");
-            for (const friend of list) {
-                friend.classList.remove("none");
-                let name = friend.querySelector('[data-role="name"]').textContent;
-                if (!name.toLowerCase().includes(input.value.toLowerCase())) {
-                    friend.classList.add("none");
-                }
-            }
-        }
     })
     .catch(e => {
         console.error(e);

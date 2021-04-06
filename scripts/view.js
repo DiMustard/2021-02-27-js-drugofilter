@@ -7,5 +7,17 @@ export default {
         } else {
             console.error("Не переданы данные");
         }
+    },
+
+
+    search(input, ul) {
+        let list = ul.querySelectorAll(".mdl-list__item");
+        for (const friend of list) {
+            friend.classList.remove("none");
+            let name = friend.querySelector('[data-role="name"]').textContent;
+            if (!name.toLowerCase().includes(input.value.toLowerCase())) {
+                friend.classList.add("none");
+            }
+        }
     }
 };

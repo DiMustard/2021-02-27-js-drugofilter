@@ -47,7 +47,46 @@ export default {
         return this.callApi('friends.get', params);
     },
 
+
     getSelect() {
-        
+        return JSON.parse(localStorage.getItem("drugofilter"));
+    },
+
+
+    setSelect(array) {
+        return localStorage.setItem("drugofilter", JSON.stringify(array));
+    },
+
+
+    addSelect(id) {
+        let array = this.getSelect();
+        if (!array.includes(id)) {
+            array.push(id);
+        }
+        this.setSelect(array);
+    },
+
+
+    removeSelect(id) {
+        let array = this.getSelect();
+        array.forEach((idSelect, i, arr) => {
+            if (idSelect === id) {
+                arr.splice(i, 1);
+            }
+        });
+        this.setSelect(array);
+    },
+
+
+    inString(array) {
+        let string = "";
+        array.forEach(elem => {
+            if (string === "") {
+                string = String(elem);
+            } else {
+                string += `,${String(elem)}`;
+            }
+        });
+        return string;
     }
 };

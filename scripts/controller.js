@@ -29,19 +29,11 @@ export default {
         const friendsSelect = document.querySelector('[data-role="friends-select"]');
         friendsSelect.innerHTML = "";
 
-        if (localStorage.length !== 0) {
-            let IDs = "";
-
-            for (let i = 0; i < localStorage.length; i++) {
-                let key = localStorage.key(i);
-                if (key.includes("drugofilter")) {
-                    key = key.slice(11);
-                    (i === 0) ? IDs += `${key}`: IDs += `, ${key}`;
-                }
-            }
-
+        if (Model.getSelect() !== null &&
+            Model.getSelect().length !== 0) {
+                
             const friendsVK = await Model.getUser({
-                user_ids: IDs,
+                user_ids: Model.inString(Model.getSelect()),
                 fields: "photo_100"
             });
 
@@ -56,6 +48,9 @@ export default {
             friendsSelect.innerHTML = View.render({
                 friends: friendsVK
             });
+
+        } else {
+            Model.setSelect([]);
         }
     },
 
