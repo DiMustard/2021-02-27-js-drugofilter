@@ -14,6 +14,7 @@ export default {
             }, perms);
 
             document.querySelector('[data-role="exit"]').addEventListener("click", () => {
+                localStorage.removeItem("drugofilter");
                 VK.Auth.logout();
                 setTimeout(() => {
                     location.reload();
