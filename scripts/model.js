@@ -25,7 +25,7 @@ export default {
 
 
     callApi(method, params) {
-        params.v = params.v || '5.78';
+        params.v = params.v || '5.81';
 
         return new Promise((resolve, reject) => {
             VK.api(method, params, response => {
